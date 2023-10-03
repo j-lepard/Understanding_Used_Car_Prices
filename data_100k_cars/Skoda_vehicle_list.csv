@@ -1,0 +1,24 @@
+,Model,Model,Model,Calendar year introduced,Current model,Current model,Vehicle description
+,Model,Model.1,Model.2,Calendar year introduced,Introduction,Update (facelift),Vehicle description
+0,Hatchback,Hatchback,Hatchback,Hatchback,Hatchback,Hatchback,Hatchback
+1,,FABIA,Fabia,1999,2021,—,B-segment hatchback.
+2,,RAPID SPACEBACK,Rapid,2012,2012,2020,"C-segment hatchback. Has been replaced in international markets by the Scala, production continues in China."
+3,,SCALA,Scala,2019,2019,—,C-segment hatchback. Successor to the Rapid Spaceback.
+4,Sedan/liftback,Sedan/liftback,Sedan/liftback,Sedan/liftback,Sedan/liftback,Sedan/liftback,Sedan/liftback
+5,,OCTAVIA,Octavia,1996,2020,—,Small family sedan (C-segment). The best-selling nameplate of Škoda.
+6,,RAPID (liftback),Rapid,2012,2012,2020,"Small family car (C-segment) liftback. Sold in core European markets between 2012 and 2019, production continues in Russia with major changes. Closely related to the SEAT Toledo and the Russian version of the Volkswagen Polo."
+7,,RAPID (sedan),Rapid,2012,2012,2021,Sedan version of the Rapid for the Chinese market. Closely related to the Volkswagen Santana.
+8,,SUPERB,Superb,2001,2015,2019,"Large family sedan (D-segment), flagship model of Škoda."
+9,,SLAVIA,Slavia,2021,2021,—,B-segment sedan based on the Volkswagen Virtus.
+10,Station wagon,Station wagon,Station wagon,Station wagon,Station wagon,Station wagon,Station wagon
+11,,OCTAVIA,Octavia,1996,2020,—,C-segment station wagon. The best-selling nameplate of Škoda.
+12,,SUPERB,Superb,2001,2015,2019,"D-segment station wagon, flagship model of Škoda."
+13,SUV/crossover,SUV/crossover,SUV/crossover,SUV/crossover,SUV/crossover,SUV/crossover,SUV/crossover
+14,,ENYAQ,Enyaq,2020,2020,—,C-segment full-electric crossover SUV built above a dedicated electric vehicle platform (MEB platform).
+15,,KAMIQ,Kamiq,2019,2019,—,B-segment crossover SUV built above the MQB A0 platform.
+16,,KAMIQ (China),Kamiq (China),2018,2018,—,B-segment crossover SUV for the Chinese market built above the older PQ34 platform.
+17,,KAMIQ GT,Kamiq (China),2019,2019,—,A version of the Chinese Kamiq with a sleeker rear body section.
+18,,KAROQ,Karoq,2017,2017,2021,"Compact crossover SUV (C-segment) built above the MQB A1 platform. Related to the SEAT Ateca, Volkswagen Taos/Tharu, and Jetta VS5."
+19,,KODIAQ,Kodiaq,2016,2016,2021,Three-row mid-size crossover SUV (D-segment) built above the MQB A2 platform.
+20,,KODIAQ GT,Kodiaq,2018,2018,—,A version of the Kodiaq in China with a lower rear body section.
+21,,KUSHAQ,Kushaq,2021,2021,—,B-segment crossover SUV for the Indian market heavily based on the Volkswagen Taigun/T-Cross.

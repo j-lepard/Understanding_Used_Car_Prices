@@ -1,0 +1,38 @@
+,Model,Model,Model,Current model,Current model,Current model,Vehicle description,"Global sales (2022, by units)[2]"
+,Image,Name(s),Introduction (cal. year),Model code,Introduction,Main markets,Vehicle description,"Global sales (2022, by units)[2]"
+0,Hatchback,Hatchback,Hatchback,Hatchback,Hatchback,Hatchback,Hatchback,Hatchback
+1,,HB20,2012,BR2,2019,Brazil and Mexico,B-segment hatchback built for the Brazilian market. Crossover version available as the HB20X.,"135,995 (incl. sedan)"
+2,,i10,2007,AC3/AI3,2019,"Europe, India, and others","A-segment hatchback mainly oriented for Europe (short wheelbase) and India (Grand i10, long wheelbase).",214386
+3,,i20,2008,BC3/BI3,2020,"Europe, India, and others",B-segment hatchback mainly oriented for Europe and India.,170440
+4,,i30,2007,PD,2016,"Europe, Australia, and others",C-segment hatchback mainly oriented for the European market.,"76,758 (incl. fastback and estate)"
+5,Sedan/liftback,Sedan/liftback,Sedan/liftback,Sedan/liftback,Sedan/liftback,Sedan/liftback,Sedan/liftback,Sedan/liftback
+6,,Accent/ Verna,1994,BN7,2023,Global (except Europe),B-segment/subcompact sedan. Known as the Solaris in CIS countries and Verna in India and China.,"127,384 (incl. hatchback)"
+7,,Aura / Grand i10 Sedan,2020,AI3,2020,India,"A-segment, sub 4-metre sedan mainly built for the Indian market. Successor of the Xcent. Also called the Grand i10 sedan outside India.",67184
+8,,Elantra / Avante / i30 Sedan,1990,CN7,2020,Global (except Western Europe),C-segment/compact sedan. Known as the Avante in South Korea and i30 Sedan in Australia.,370973
+9,,Grandeur/ Azera,1986,GN7,2022,"South Korea, Middle East",Executive sedan oriented for the domestic South Korean market.,71858
+10,,HB20S,2012,BR2,2019,Brazil,Sedan version of the HB20.,"135,995 (incl. hatchback)"
+11,,i30,2016,PD,2016,Europe,Fastback/liftback version of the i30. Pre-facelift model pictured.,"76,758 (incl. hatchback and estate)"
+12,,Ioniq 6,2022,CE,2022,Global,Electric D-segment/mid-size under the Ioniq sub-brand.,14821
+13,,Sonata,1985,DN8,2019,Global (except Europe),D-segment/mid-size sedan.,136088
+14,Station wagon,Station wagon,Station wagon,Station wagon,Station wagon,Station wagon,Station wagon,Station wagon
+15,,i30,2007,PD,2016,Europe,Station wagon version of the i30.,"76,758 (incl. hatchback and estate)"
+16,SUV/crossover,SUV/crossover,SUV/crossover,SUV/crossover,SUV/crossover,SUV/crossover,SUV/crossover,SUV/crossover
+17,,Alcazar / Grand Creta,2021,SU2 LWB,2021,India and other emerging markets,Three-row compact crossover SUV oriented for the Indian market based on Hyundai Creta.,38433
+18,,Bayon,2021,BC3 CUV,2021,Europe,Subcompact crossover SUV (B-segment) smaller than Kona based on the i20 for the European market.,45811
+19,,Casper,2021,AX1,2021,South Korea,Crossover city car oriented for the South Korean light car segment.,48002
+20,,Creta/ Cantus,2014,SU2,2019,"Global, emerging market oriented",Subcompact crossover SUV (B-segment) larger than Kona oriented for emerging markets. Known as the Cantus in Dominican Republic.,303077
+21,,Exter,2023,AI3 CUV,2023,India,Crossover based on the Grand i10 for the Indian market.,-
+22,,Ioniq 5,2021,NE,2021,Global,Electric compact crossover SUV under the Ioniq sub-brand.,99727
+23,,Kona/ Kauai,2017,SX2,2023,"Global, developed market-oriented",Subcompact crossover SUV (B-segment) oriented for developed markets.,234614
+24,,Mufasa,2023,NU2,2023,China,Two-row compact crossover SUV for the Chinese market. Successor to the ix35.,-
+25,,Nexo,2018,FE,2018,"South Korea, North America and Europe",Fuel cell compact crossover SUV.,10527
+26,,Palisade,2018,LX2,2018,"South Korea, North America and Australasia",Three-row mid-size crossover SUV for the selected markets.,151427
+27,,Santa Fe,2000,MX5,2023,Global,Two or three-row mid-size crossover SUV that slots between Tucson and Palisade.,214744
+28,,Tucson,2004,NX4,2020,Global,Two-row compact crossover SUV. Best-selling Hyundai model in 2021.,560862
+29,,Venue,2019,QX,2019,Global (except Europe and China),Subcompact crossover SUV (B-segment) smaller than Kona.,188701
+30,Pickup truck,Pickup truck,Pickup truck,Pickup truck,Pickup truck,Pickup truck,Pickup truck,Pickup truck
+31,,Santa Cruz,2021,NX4a OB,2021,North America,Compact pickup based on the Tucson.,42390
+32,MPV/van,MPV/van,MPV/van,MPV/van,MPV/van,MPV/van,MPV/van,MPV/van
+33,,Custo/ Custin,2021,KU,2021,"China, Taiwan and Vietnam",Minivan for the Chinese and Taiwanese market with three-row seating.,13678
+34,,Staria,2021,US4,2021,"South Korea, Australasia and others","Front-wheel drive minivan. Available with one-row, three-row and four-row seating.",
+35,,Stargazer,2022,KS,2022,Southeast Asia,Compact MPV for the Southeast Asian market with three-row seating.,18384
