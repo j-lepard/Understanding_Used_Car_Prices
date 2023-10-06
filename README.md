@@ -114,7 +114,7 @@ csv_file_df.insert(1, 'brand', brand_name)
 ##### Histograms
 - Visualize the distribution of each numerical variable in our data.
 
-[histrogram](https://github.com/j-lepard/LHL-MidtermProject/blob/main/images/histogram.PNG)![Alt text](images/histogram.PNG)
+![Alt text](images/histogram.PNG)
 
 - From the histograms we noticed that all the numeric data had a skewed distribution. To stabilize variance and make the data more normally distributed we applied the logarithmic function (to all numeric data types except 'year').
 ```python
@@ -129,11 +129,11 @@ for col in columns_to_transform:
   - Plotted the transformed price evaluated by year.  
   - Plotted the transformed price dependence on the transformed predictor mileage evaluated by year.
 
-[price_log-by-year](https://github.com/j-lepard/LHL-MidtermProject/blob/main/images/price_log-by-year.PNG)  
-![Alt text](images/price_log-by-year.PNG)
 
-[pricePerMileage_log-by-year](https://github.com/j-lepard/LHL-MidtermProject/blob/main/images/pricePerMileage_log-by-year.PNG) 
-![Alt text](images/pricePerMileage_log-by-year.PNG) 
+![price_log-by-year](images/price_log-by-year.PNG)
+
+
+![pricePerMileage_log-by-year](images/pricePerMileage_log-by-year.PNG) 
 
 - Through this process we explored different ways of identifying potential outliers that exist within the data. However, we did not "handle" them since the process did not provide any conclusive evidence. In other words, it was observed that the complexities of 'price' could not be captured by any single variable alone (e.g. price per mileage, although 'mileage' is an important factor, it certainly is not the only determinant of a vehicle's price), but rather is influenced by a multitude of possible predictors including 'year', 'engineSize', 'brand', etc. and eliminating the outliers based on 'price' alone would not make sense. In this case, we turned to correlation and regression to see if it could help us better understand and quantify the relationships between features (predictors) and price.
 
@@ -170,8 +170,8 @@ for col in columns_to_transform:
 >
 > For example, for the categorical variable 'transmission', a possible key-mapping of numeric labels could be represented as follows: 
 >
-> [key_mapping](https://github.com/j-lepard/LHL-MidtermProject/blob/main/images/key_mapping.PNG)  
-> ![Alt text](images/key_mapping.PNG)
+>
+> ![key_mapping](images/key_mapping.PNG)
 
 <br>
 
@@ -182,8 +182,8 @@ for col in columns_to_transform:
 - To appropriately represent the nominal categorical variables with no inherent order, our ideal choice would be to use one-hot encoding, but it would not be feasible to represent a total of 29 columns (and rows) on a heatmap in Python due to limited space for visualization.
 - The choice of label encoding was made to maintain a manageable number of columns while still attempting to represent the categorical nature of the data.  
 
-[label_encoded_corr](https://github.com/j-lepard/LHL-MidtermProject/blob/main/images/label_encoded_corr.PNG)  
-![Alt text](images/label_encoded_corr.PNG)
+
+![label_encoded_corr](images/label_encoded_corr.PNG)
 
 Note: it may be difficult to accurately describe the results due to the encodings and the assumptions made. We will also be primarily examing the "_encoded" and "_log" (normalized) values.
 
@@ -241,7 +241,6 @@ Note: it may be difficult to accurately describe the results due to the encoding
 
 
   - While all the data appears to be statistically significant predictors of price except 'transmission_Other', based on reality we know that this is not the case, in fact 'mpg' does affect price. The more fuel-efficient the car is, the more it tends to cost. In terms, of the model this just means it needs to be reworked. In additional, more models can be developed with different predictors and an elimination technique (e.g. backward elimination) can be applied to minimize Adj. R-Squared, while maximizing R-Squared. 
-
 ...
 
 
@@ -249,7 +248,6 @@ Note: it may be difficult to accurately describe the results due to the encoding
 - Images forthcoming.
 ..
 
-..
 
 ## <br>Challenges
 - Lack of time.
@@ -270,8 +268,8 @@ Note: it may be difficult to accurately describe the results due to the encoding
 
 Sample output from the result:
 
-[wiki_api_sample_output](https://github.com/j-lepard/LHL-MidtermProject/blob/main/images/wiki_api_sample_output.PNG)  
-![Alt text](images/wiki_api_sample_output.PNG)
+  
+![wiki_api_sample_output](images/wiki_api_sample_output.PNG)
 
 ```python
 # work-in-progresss
