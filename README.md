@@ -46,12 +46,17 @@ The objective is to define a specific problem and thoroughly investigate it usin
     - Export data and model(s) to Tableau.
 #### Step 5
 - Presentation of Tableau dashboards and tools:
+- (This is the Midterm.twbx in the parent folder)
   - Explain our EDA process.
+  - Provide a tool for our clients, the used car sellers, to understand the distribution of price by categories
   - Describe our outlier procedure and insights.
   - Show the different transformations for quantitative attributes.
   - Show the scatter plots to depict the relationship between the Y and X values.
   - Show a correlation matrix of the model values.
-  - Deliver a tool that allows 'a used car seller' to assess a car based on the predictor variables in the model.
+  - Show the difference between Y and Log of Y
+  - Deliver a tool that allows 'a used car seller' to assess a car based on the predictor variables in the model
+- (This is the Regression_chart.twbx in the parent folder)
+- To explain the model's coeficients and ability in non technical detail
   
 
 ### <br>Project Development
@@ -245,7 +250,29 @@ Note: it may be difficult to accurately describe the results due to the encoding
 
 
 ### <br>Tableau
-- Images forthcoming.
+- ![image](https://github.com/j-lepard/LHL-MidtermProject/assets/86686228/83479b34-a1ea-4872-af9d-cc7875494837)
+- As a tool, allows the user to understand the average price (line) and distribution (25% Percentile and 75% Percentile shaded)
+- Change the categories to see how each sold over time
+![image](https://github.com/j-lepard/LHL-MidtermProject/assets/86686228/e7c0f9b5-8bdc-4ca6-883c-7c25c24465a6)
+-This shows the distribution against price.  There are many filter tools that allow you to understand how each category, including a single model of a car, differs in price.
+
+![image](https://github.com/j-lepard/LHL-MidtermProject/assets/86686228/449efd66-3d7c-44da-8d0c-ae38d0ce7356)
+- This allows the user to select a sheet in the middle pane.  It changes the category distributions against price and the log of price.
+- This correlation matrix allowed us to make a decision whether we were going to transfor any of the quantitative variables by referencing the scatter plot, looking for linear relationships.
+
+![image](https://github.com/j-lepard/LHL-MidtermProject/assets/86686228/1ccab73e-2ee6-4398-964d-19a221b5da19)
+
+- Ultimately, it came down to either using Y or Log(Y)), and we were able to see how many outliers there were in addition to analyzing the coefficients.
+- We chose the Price, with no transformation.
+
+![image](https://github.com/j-lepard/LHL-MidtermProject/assets/86686228/ecb2f76c-e829-4853-8b6f-a1275dbd5aec)
+
+- the last dashboard in this tableu file is a calculator to provide an predicted estimate for a car based on the inputs by the user.  This is to be used as a tool to predict car prices.
+
+
+![image](https://github.com/j-lepard/LHL-MidtermProject/assets/86686228/51cbdbce-729b-41bb-8041-266f0da393d8)
+- This supplemented the discussion on how the model works by explaining the various values compared against "audi", "diesel", and "automatic".
+
 ..
 
 
@@ -258,8 +285,7 @@ Note: it may be difficult to accurately describe the results due to the encoding
   - We considered classifying the data by weight classes (e.g. light duty, medium duty, heavy duty) but did not have that information listed in the dataset and this classification also most likely varies by country.
   - We considered classifying the data by engine size but since the data contained both North American and European brands they would also most likely be evaluated differently.
 - Determining the suitable methods of outlier detection and/or removal, as well as interpreting the results. Since price relies heavily upon a multitude of factors, we struggled with deciding which variables could be removed.
-- (regression analsysis - had to apply specific algorithm etc. outside of scope of current knowledge)
-- (add any challenges and future considerations as you guys see fit)
+- regression analsysis had to apply specific algorithm outside of scope of current knowledge)
 
 ## <br>Future Considerations
 - Creating a procedure for appropriate naming convention and folder structure
