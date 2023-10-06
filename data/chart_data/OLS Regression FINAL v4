@@ -1,0 +1,45 @@
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                  price   R-squared:                       0.767
+Model:                            OLS   Adj. R-squared:                  0.767
+Method:                 Least Squares   F-statistic:                 1.722e+04
+Date:                Fri, 06 Oct 2023   Prob (F-statistic):               0.00
+Time:                        10:58:35   Log-Likelihood:            -9.8061e+05
+No. Observations:               99185   AIC:                         1.961e+06
+Df Residuals:                   99165   BIC:                         1.961e+06
+Df Model:                          19                                         
+Covariance Type:            nonrobust                                         
+==========================================================================================
+                             coef    std err          t      P>|t|      [0.025      0.975]
+------------------------------------------------------------------------------------------
+const                    -3.1e+06   2.21e+04   -140.339      0.000   -3.14e+06   -3.06e+06
+year                    1541.6081     10.935    140.980      0.000    1520.176    1563.041
+mileage                   -0.0897      0.001    -80.139      0.000      -0.092      -0.088
+mpg                      -50.3226      1.278    -39.378      0.000     -52.827     -47.818
+engineSize              9290.7823     42.360    219.327      0.000    9207.756    9373.808
+brand_Vauxhall         -6906.5645     65.561   -105.346      0.000   -7035.063   -6778.066
+fuelType_Hybrid         4808.4037    113.145     42.498      0.000    4586.641    5030.167
+brand_Toyota           -6337.4461     82.783    -76.555      0.000   -6499.700   -6175.192
+brand_Hyundai          -5651.3512     85.159    -66.362      0.000   -5818.262   -5484.440
+fuelType_Petrol         1117.3359     42.042     26.576      0.000    1034.933    1199.739
+fuelType_Electric       1.935e+04   1965.430      9.846      0.000    1.55e+04    2.32e+04
+transmission_Other       622.1431   1587.360      0.392      0.695   -2489.064    3733.350
+transmission_Semi-Auto   472.5942     48.172      9.811      0.000     378.178     567.010
+brand_Ford             -3874.3358     62.402    -62.087      0.000   -3996.642   -3752.029
+fuelType_Other          3964.4488    308.859     12.836      0.000    3359.089    4569.809
+brand_Volkswagen       -3042.9227     61.446    -49.522      0.000   -3163.357   -2922.489
+brand_Skoda            -4561.7994     77.520    -58.847      0.000   -4713.738   -4409.861
+brand_BMW              -2326.3978     66.183    -35.151      0.000   -2456.116   -2196.679
+brand_Mercedes-Benz     -345.2981     63.626     -5.427      0.000    -470.003    -220.593
+transmission_Manual    -1880.1094     48.304    -38.922      0.000   -1974.785   -1785.434
+==============================================================================
+Omnibus:                    85185.111   Durbin-Watson:                   1.600
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):          8179460.019
+Skew:                           3.657   Prob(JB):                         0.00
+Kurtosis:                      46.883   Cond. No.                     4.58e+07
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+[2] The condition number is large, 4.58e+07. This might indicate that there are
+strong multicollinearity or other numerical problems.
