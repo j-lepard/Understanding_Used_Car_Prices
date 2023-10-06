@@ -45,20 +45,19 @@ The objective is to define a specific problem and thoroughly investigate it usin
     - Linear regression model(s) and proof of concept for numeric and categorical data.
     - Export data and model(s) to Tableau.
 #### Step 5
-- Presentation of Tableau dashboards and tools:
-- (This is the Midterm.twbx in the parent folder)
+##### Presentation of Tableau dashboards and tools:
+- Tableau file: Midterm.twbx
   - Explain our EDA process.
-  - Provide a tool for our clients, the used car sellers, to understand the distribution of price by categories
+  - Provide a tool for our clients, the used car sellers, to understand the distribution of price by categories.
   - Describe our outlier procedure and insights.
   - Show the different transformations for quantitative attributes.
   - Show the scatter plots to depict the relationship between the Y and X values.
   - Show a correlation matrix of the model values.
-  - Show the difference between Y and Log of Y
-  - Deliver a tool that allows 'a used car seller' to assess a car based on the predictor variables in the model
-- (This is the Regression_chart.twbx in the parent folder)
-- To explain the model's coeficients and ability in non technical detail
+  - Show the difference between Y and Log(Y).
+  - Deliver a tool that allows 'a used car seller' to access a car based on the predictor variables in the model.
+- Tableau file: Regression_Chart.twbx
+  - To explain the model's coeficients and ability in non technical detail.
   
-
 ### <br>Project Development
 - Utilize communication tools (e.g. Google documents, Discord) to discuss and share ideas.
 
@@ -111,7 +110,7 @@ csv_file_df.insert(1, 'brand', brand_name)
 ```
 
 #### <br> Exploratory Data Analysis
-- From initial inspection of the rows, we notice that the data contained
+- From initial inspection of the rows, we notice that the data contained.
   - 1 count of 'year' equal to 2060 (assumed to be a typo based on comparison with other 2006 Ford Fiesta's, value changed to 2006).
   - 2 counts of 'year' equal to 1970 (removed due to gap between 'year' value and next sequential 'year' equal to 1996).
 
@@ -119,7 +118,7 @@ csv_file_df.insert(1, 'brand', brand_name)
 ##### Histograms
 - Visualize the distribution of each numerical variable in our data.
 
-![Alt text](images/histogram.PNG)
+![histogram](images/histogram.PNG)
 
 - From the histograms we noticed that all the numeric data had a skewed distribution. To stabilize variance and make the data more normally distributed we applied the logarithmic function (to all numeric data types except 'year').
 ```python
@@ -134,9 +133,7 @@ for col in columns_to_transform:
   - Plotted the transformed price evaluated by year.  
   - Plotted the transformed price dependence on the transformed predictor mileage evaluated by year.
 
-
 ![price_log-by-year](images/price_log-by-year.PNG)
-
 
 ![pricePerMileage_log-by-year](images/pricePerMileage_log-by-year.PNG) 
 
@@ -207,74 +204,75 @@ Note: it may be difficult to accurately describe the results due to the encoding
   - 'mpg_log' has the following correlation:
     - weak to moderate negative correlation with price and engineSize. A more fuel-efficient vehicle may be cheaper to own (for example, possible cheaper buying/selling costs in the long-term and to encourage a more environmental-friendly approach). Additionally, large engineSize may indicate that although they are more powerful (e.g. for towing cars/hauling trailers or racing), they are not as fuel-efficient.
 
-### <br>Multivariable Regression Analysis
+### <br>Multivariable regression analysis
 
 - The ordinary least squares (OLS) regression analysis output uses price as the the dependent variable with several independent variables (or predictors) to model the relationship.
 - The output of the model and an interpretation is given below:  
 
-**Multiple Regression Output**  
 ![Alt text](<images/OLS_Regression_Log_price FINAL v4.png>)
   
-  **R-squared:**  
+**R-squared:**  
   - indicates about 76.7% of the variance in the dependent variable (price) is explained by the independent variables in the model.  
   
-  **Adj. R-Squared:**  
+**Adj. R-Squared:**  
   - the R-squared value adjusted for the number of predictors and penalizes for adding unnecessary predictors. At 76.7%, it suggests that there is no penalty for the inclusion of predictors.  
   
-   **F-statistic:**
-  -  tests for overall significiance of the model, in this case it is 1.722e+04 indicating a highly significant model.  
+**F-statistic:**
+  - tests for overall significiance of the model, in this case it is 1.722e+04 indicating a highly significant model.  
   
-  **Coefficients**:   
-  - 'year' -  indicates one-unit increase in the year is associated with an estimated increase in price of approximately $1541.61.  
-  - 'mileage' indicates that for each additional unit of mileage, the price is estimated to decrease by approximately $0.0897.
-  - 'mpg' indicates that each decrease of one unit in miles per gallon is associated with an estimated decrease in price of approximately $50.32.  
-  - 'engineSize' indicates that each increase in engine size is associated with an estimated increase in price of approximately £9,290.78, holding all other variables constant.
-  - Categorical predictors -'brand_' 'fuelType_' and  'transmission_' variable coefficients represent the estimated difference in price compared to a reference case. 
+**Coefficients**:   
+  - 'year': indicates one-unit increase in the year is associated with an estimated increase in price of approximately $1541.61.  
+  - 'mileage': indicates that for each additional unit of mileage, the price is estimated to decrease by approximately $0.0897.
+  - 'mpg': indicates that each decrease of one unit in miles per gallon is associated with an estimated decrease in price of approximately $50.32.  
+  - 'engineSize': indicates that each increase in engine size is associated with an estimated increase in price of approximately $9,290.78.
+  - Categorical predictors -'brand_' 'fuelType_' and 'transmission_' variable coefficients represent the estimated difference in price compared to a reference case. 
   - **Base Cases:**
     - Brand = Audi
     - Transmission = Automatic
     - Fuel Type = Petrol (gas)
 
-**Impact of Categorical Variables on Expected Selling Price**
+**Impact of categorical variables on expected selling price**
 ![Alt text](images/Categorical_coefficients_output_chart.png)
 
-  Overall Shape of distrirbution: 
-  
+overall shape of distrirbution: 
   - The 'skew' of 3.657 indicates the data is skewed to the right and that there are outliers that are affecting the mean and making the distribution asymmetric.
   - The 'kurtosis' of 46.883 indicates very heavy tails suggesting that there are extreme outliers or the data points are more concentrated in the tails than a normal distribution.
 
-
-
   - While all the data appears to be statistically significant predictors of price except 'transmission_Other', based on reality we know that this is not the case, in fact 'mpg' does affect price. The more fuel-efficient the car is, the more it tends to cost. In terms, of the model this just means it needs to be reworked. In additional, more models can be developed with different predictors and an elimination technique (e.g. backward elimination) can be applied to minimize Adj. R-Squared, while maximizing R-Squared. 
-...
-
 
 ### <br>Tableau
-- ![image](https://github.com/j-lepard/LHL-MidtermProject/assets/86686228/83479b34-a1ea-4872-af9d-cc7875494837)
-- As a tool, allows the user to understand the average price (line) and distribution (25% Percentile and 75% Percentile shaded)
-- Change the categories to see how each sold over time
-![image](https://github.com/j-lepard/LHL-MidtermProject/assets/86686228/e7c0f9b5-8bdc-4ca6-883c-7c25c24465a6)
--This shows the distribution against price.  There are many filter tools that allow you to understand how each category, including a single model of a car, differs in price.
 
-![image](https://github.com/j-lepard/LHL-MidtermProject/assets/86686228/449efd66-3d7c-44da-8d0c-ae38d0ce7356)
-- This allows the user to select a sheet in the middle pane.  It changes the category distributions against price and the log of price.
-- This correlation matrix allowed us to make a decision whether we were going to transfor any of the quantitative variables by referencing the scatter plot, looking for linear relationships.
+![dashboard1](images/Dashboard1_EDA.PNG)
 
-![image](https://github.com/j-lepard/LHL-MidtermProject/assets/86686228/1ccab73e-2ee6-4398-964d-19a221b5da19)
+- As a tool, it allows the user to understand the average price (line) and distribution (25% Percentile and 75% Percentile shaded).
+- Change the categories to see how each sold over time.
+<br>
 
-- Ultimately, it came down to either using Y or Log(Y)), and we were able to see how many outliers there were in addition to analyzing the coefficients.
-- We chose the Price, with no transformation.
+![dashboard2](images/Dashboard2.PNG)
 
-![image](https://github.com/j-lepard/LHL-MidtermProject/assets/86686228/ecb2f76c-e829-4853-8b6f-a1275dbd5aec)
+- This shows the distribution against price. There are many filter tools that allow you to understand how each category, including a single model of a car, differs in price.
+<br>
 
-- the last dashboard in this tableu file is a calculator to provide an predicted estimate for a car based on the inputs by the user.  This is to be used as a tool to predict car prices.
+![dashboard3](images/Dashboard3correlation.png)
 
+- This allows the user to select a sheet in the middle pane. It changes the category distributions against price and log(price).
+- This correlation matrix allowed us to make a decision of whether we were going to transfor any of the quantitative variables by referencing the scatter plot, looking for linear relationships.
+<br>
 
-![image](https://github.com/j-lepard/LHL-MidtermProject/assets/86686228/51cbdbce-729b-41bb-8041-266f0da393d8)
-- This supplemented the discussion on how the model works by explaining the various values compared against "audi", "diesel", and "automatic".
+![dashboard4](images/Dashboard4CorrBoxPlots.PNG)
 
-..
+- Ultimately, it came down to either using Y or Log(Y), and we were able to see how many outliers there were in addition to analyzing the coefficients.
+- We selected the price, with no transformation.
+<br>
 
+![dashboard5](images/Dashboard5ModelCalculator.PNG)
+
+- The last dashboard in this tableu file is a calculator to provide an predicted estimate for a car based on the inputs by the user. This is to be used as a tool to predict car prices.
+<br>
+
+![sheet1](images/category_per_parameter.PNG)
+
+- This supplemented the discussion on how the model works by explaining the various values compared against "Audi", "Diesel", and "Automatic".
 
 ## <br>Challenges
 - Lack of time.
@@ -285,16 +283,15 @@ Note: it may be difficult to accurately describe the results due to the encoding
   - We considered classifying the data by weight classes (e.g. light duty, medium duty, heavy duty) but did not have that information listed in the dataset and this classification also most likely varies by country.
   - We considered classifying the data by engine size but since the data contained both North American and European brands they would also most likely be evaluated differently.
 - Determining the suitable methods of outlier detection and/or removal, as well as interpreting the results. Since price relies heavily upon a multitude of factors, we struggled with deciding which variables could be removed.
-- regression analsysis had to apply specific algorithm outside of scope of current knowledge)
+- Regression analsysis required the application of a specific algorithm (outside of scope of current knowledge).
 
 ## <br>Future Considerations
-- Creating a procedure for appropriate naming convention and folder structure
+- Creating a procedure for appropriate naming convention and folder structure.
 - Develop our own list of classification to better categorize the data and use it to create more impactful visualizations.
 - Automating the code when considering additional datasets added to the DataFrame. Currently, we have a dictionary defined to assign the country to the corresponding brand. Everytime a new brand is added to the dataset, we would then have to hardcode a country associated with it. For instance, we could use a Wikipedia API with HTML elements to extract data from a page containing a list of information about automobile manufacturers by country and create our own dictionary for all brands which we can be used and implemented into our DataFrame. As seen below, there was code that we were working on and from testing it seemed to work, but we did not have the time to run through the entirety of the Wikipedia page from A to Z.
 
 Sample output from the result:
 
-  
 ![wiki_api_sample_output](images/wiki_api_sample_output.PNG)
 
 ```python
@@ -364,5 +361,4 @@ for country, manufacturers in country_car_mapping_api.items():
 ```
 
 - Implementation of the data into a SQL database.
-- (number of rows and columns affecting performance making dashboard unusable implement something like "with a single, flat file, performance was impacted?)
-- (add any challenges and future considerations as you guys see fit)
+- Determining a way to improve the overall performance on Tableau as it was slow when working with about 1000,000 rows.
