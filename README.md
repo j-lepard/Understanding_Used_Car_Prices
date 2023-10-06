@@ -35,20 +35,23 @@ The objective is to define a specific problem and thoroughly investigate it usin
   - Verifying data integrity.
 - Feature engineering (e.g. add the associated brand and country identifiers).
 #### Step 4
-- EDA process: 
+- EDA (python) process: 
   - Additional cleaning procedures.
   - Data distribution (histograms) and normalization using logarithmic transformations.
   - Different outlier identification methods (boxplots) to showcase price's dependency on multiple factors.
   - Correlation analysis (heatmap) to better understand the features.
   - Multivariable regression analysis to quantify the relationship between multiple predictors (features) and price.
+    - One-hot encoding.
+    - Linear regression model(s) and proof of concept for numeric and categorical data.
+    - Export data and model(s) to Tableau.
 #### Step 5
-- Tableau Dashboards and tools
-- Show our EDA Process
-- Describe our outlier process
-- show the different transformations for quantitative attributes
-- show the scatter plots to show the relationship between the Y and X values
-- Show a final Correlation matrix of the model values
-- Deliver a tool that allows a used car seller to assess a car based on the predictor variables of the model
+- Presentation of Tableau dashboards and tools:
+  - Explain our EDA process.
+  - Describe our outlier procedure and insights.
+  - Show the different transformations for quantitative attributes.
+  - Show the scatter plots to depict the relationship between the Y and X values.
+  - Show a correlation matrix of the model values.
+  - Deliver a tool that allows 'a used car seller' to assess a car based on the predictor variables in the model.
   
 
 ### <br>Project Development
@@ -65,8 +68,6 @@ The dataset contains characteristics related to the vehicle:
 - tax: The tax amount associated with owning or using the vehicle (can depend on emissions, vehicle type, or government regulations).
 - mpg: The miles per gallon; a measure of a vehicle's fuel efficiency, representing the number of miles it can travel using one gallon of fuel.
 - engineSize: The size or capacity of the vehicle's engine (in litres), it provides an indication of the engine's power and performance capabilities.
-
-- User friendly tool to 
 
 ### <br>Data Cleaning and Exploratory Data Analysis
 #### Data Cleaning
@@ -200,9 +201,30 @@ Note: it may be difficult to accurately describe the results due to the encoding
 ### <br>Multivariable Regression Analysis
 - Jamie
 - (i just skipped for now, will come back to it if have time but if you want to provide information go ahead as you see fit, i may be able to complete this just need to go through your notebook, however my version may be more brief than you would like)
-..
 
-..
+
+
+- The ordinary least squares (OLS) regression analysis output uses price as the the dependent variable with several independent variables (or predictors) to model the relationship.
+  - 'R-squared' indicates about 76.7% of the variance in the dependent variable (price) is explained by the independent variables in the model.
+  - 'Adj. R-Squared' is the R-squared value adjusted for the number of predictors and penalizes for adding unnecessary predictors. At 76.7%, it suggests that there is no penalty for the inclusion of predictors.
+  - 'F-statistic' tests for overall significiance of the model, in this case it is 1.722e+04 indicating a highly significant model.
+  - 'Prob (F-statistic)' is the associated p-value (0.00) of the F-statistic suggesting that the overall model is statistically significant.
+  - the coefficient 'year' indicates one-unit increase in the year is associated with an estimated increase in price of approximately $1541.61.
+  - the coefficient 'mileage' indicates that for each additional unit of mileage, the price is estimated to decrease by approximately $0.0897.
+  - the coeffcient 'mpg' indicates that each decrease of one unit in miles per gallon is associated with an estimated decrease in price of approximately $50.32.
+  - the coefficient 'engineSize' indicates that each increase in engine size is associated with an estimated increase in price of approximately £9,290.78, holding all other variables constant.
+  - the 'brand_' variable coefficients represent the estimated difference in price compared to a reference brand.
+  - the 'fuelType_' variable coefficients represent the estimated difference in price compared to a reference fuel type.
+  - the 'transmission_' variable coefficients represent the estimated difference in price compared to a reference transmission type.
+  - The 'skew' of 3.657 indicates the data is skewed to the right and that there are outliers that are affecting the mean and making the distribution asymmetric.
+  - The 'kurtosis' of 46.883 indicates very heavy tails suggesting that there are extreme outliers or the data points are more concentrated in the tails than a normal distribution.
+
+![img9](https://github.com/j-lepard/LHL-MidtermProject/assets/128000630/28e95f1e-8d9f-4433-bf00-53f2898c4e89)
+
+  - While all the data appears to be statistically significant predictors of price except 'transmission_Other', based on reality we know that this is not the case, in fact 'mpg' does affect price. The more fuel-efficient the car is, the more it tends to cost. In terms, of the model this just means it needs to be reworked. In additional, more models can be developed with different predictors and an elimination technique (e.g. backward elimination) can be applied to minimize Adj. R-Squared, while maximizing R-Squared. 
+
+...
+
 
 ### <br>Tableau
 - Jamie/Kieran
@@ -214,7 +236,7 @@ Note: it may be difficult to accurately describe the results due to the encoding
 ..
 
 ## <br>Challenges
-- Time.
+- Lack of time.
 - Coordinating different schedules and timezones.
 - Maintaining appropriate file naming conventions and folder structure.
 - Determining whether or not to further classify the data (in addition to 'country' and 'brand'), how we would classify it and an efficient way of extracting that information to apply it directly to our DataFrames.
@@ -300,5 +322,6 @@ for country, manufacturers in country_car_mapping_api.items():
     print(f"Car Manufacturers: {manufacturers}\n")
 ```
 
+- Implementation of the data into a SQL database.
 - (number of rows and columns affecting performance making dashboard unusable implement something like "with a single, flat file, performance was impacted?)
 - (add any challenges and future considerations as you guys see fit)
