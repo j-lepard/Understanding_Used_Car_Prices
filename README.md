@@ -43,7 +43,7 @@ The objective is to define a specific problem and thoroughly investigate it usin
   - Multivariable regression analysis to quantify the relationship between multiple predictors (features) and price.
 #### Step 5
 - Tableau  
-
+-(feel free to add to any of the steps above as I only have little knowledge of what Jamie was doing at each step, but not certain where Kieran was at with each step)
 ...
 
 ...
@@ -51,7 +51,7 @@ The objective is to define a specific problem and thoroughly investigate it usin
 ### <br>Project Development
 - Utilize communication tools (e.g. Google documents, Discord) to discuss and share ideas.
 
-## <br>Results
+## <br> Results
 The dataset contains characteristics related to the vehicle:
 - model: The specific designation given to a particular type or version of a vehicle made by a manufacturer.
 - year: The year in which the vehicile was manufactured or registered. 
@@ -140,59 +140,84 @@ for col in columns_to_transform:
   - Direct key-mapping
 - Encoding is a process of converting categorical data (non-numeric) into a numeric format that can be used by machine learning models. There are several ways to perform encoding, two common methods being "one-hot encoding" and "label encoding".
 
-#### Label encoding
-Used when the categorical feature is assumed to be ordinal, implying some form of order or ranking, although it might not be accurate in practice. Assigns a unique numerical label to each category. It is commonly utilized when preserving space is a priority or when the data has a clear ordinal relationship. But may introduce a misleading ordinal relationship, which can lead to misinterpretations by some machine learning algorithms.
-
-The categorical variable 'transmission' in the dataset is represented as either "manual". "automatic", "semi-auto", or "other". In label encoding, this categorical variable would aggregate the different categories into a single column 'transmission' with numeric labels.
-
-For example, for the categorical variable 'transmission' for label encoding would be represented as follows:
-- 'transmission_encoded'
-
-
-
-
-In the case of the direct key-mapping, although we are creating numeric labels, they are separate and inherently does not provide a meaningful relationship.
-
-    - Compared to the direct mapping (previously described), it does not inherently make the data ordinal (or provide a meaningful relationship between the categories). It would also create multiple
-
-
-- In such as case, a possible mapping may look like the following.
- 
-![img2](https://github.com/j-lepard/LHL-MidtermProject/assets/128000630/9b6863fd-f0c5-4cf8-bc5e-7f4634910752)
-
-
+#### <br>Label encoding
+> Used when the categorical feature is assumed to be ordinal, implying some form of order or ranking, although it might not be accurate in practice. Assigns a unique numerical label to each category. It is commonly utilized when preserving space is a priority or when the data has a clear ordinal relationship. But may introduce a misleading ordinal relationship, which can lead to misinterpretations by some machine learning algorithms.
+>
+> The categorical variable 'transmission' in the dataset is represented as either "manual". "automatic", "semi-auto", or "other". In label encoding, this categorical variable would aggregate the different categories into a single column 'transmission' with numeric labels.
+>
+> For example, for the categorical variable 'transmission' it would create a label encoding that is represented as follows:
+> - 'transmission_encoded'
 
 #### One-hot encoding (also known as dummy encoding)
-Used when categorical feature is nominal, meaning there's not inherent order or ranking between categories. It creates new binary columns for each category and represents the presence or absence of a category with a 1 or 0, respectively. It avoids introducing false ordinal relationships.
+> Used when the categorical feature is nominal, meaning there's no inherent order or ranking between categories. It creates separate binary columns for each category, indicating the presence (1) or absence (0) of the category. It accurately  represents the categorical nature of the data without introducing false ordinal relationships. However, it typically increases dimensionality, which might be a concern with limited space or when dealing with a large number of categories.
+>
+> For example, for the categorical variable 'transmission', it would create four separate binary columns (dummy variables):
+> - 'transmission_manual': [1, 0, 0, 0]
+> - 'transmission_automatic': [0, 1, 0, 0]
+> - 'transmission_semi-auto': [0, 0, 1, 0]
+> - 'transmission_other': [0, 0, 0, 1]
 
-For example, for the categorical variable 'transmission', it would create four separate binary columns (dummy variables):
-- 'transmission_manual': [1, 0, 0, 0]
-- 'transmission_automatic': [0, 1, 0, 0]
-- 'transmission_semi-auto': [0, 0, 1, 0]
-- 'transmission_other': [0, 0, 0, 1]
+#### Direct key-mapping
+> Assigns a unique numerical value to each category directly, creating separate numerical labels. It is somewhat similar to one-hot encoding in terms of generate separate numerical labels for each category, but without the binary representation. Essentially creating a set of numerical representations for the categories without implying any specific relationship. However, it can also be misleading if the numerical values are misinterpreted as having a meaningful relationship or order. 
+>
+> For example, for the categorical variable 'transmission', a possible key-mapping of numeric labels could be represented as follows: 
+>
+> ![img2](https://github.com/j-lepard/LHL-MidtermProject/assets/128000630/9b6863fd-f0c5-4cf8-bc5e-7f4634910752)
 
-In the case of the direct key-mapping, we are creating four separate numeric labels which assigns a set of numerical representations for the categories without implying any specfic relationship. This would not produce the kind of relationship we would want.
+<br>
 
+- We want to represent 11 numerical variables and 3 categorical variables on a heatmap. The categorical variables are:
+  - 'brand' which has 9 categories ("Audi, "BMW", etc).
+  - 'transmission' which has 4 categories ("Manual", "Automatic", etc).
+  - 'fuelType which has 5 categories ("Diesel", "Petrol", etc).
+- To appropriately represent the nominal categorical variables with no inherent order, our ideal choice would be to use one-hot encoding, but it would not be feasible to represent a total of 29 columns (and rows) on a heatmap in Python due to limited space for visualization.
+- The choice of label encoding was made to maintain a manageable number of columns while still attempting to represent the categorical nature of the data.  
 
+![img6](https://github.com/j-lepard/LHL-MidtermProject/assets/128000630/7601dbe3-70aa-4560-a25c-6b20705cc551)
 
-- However, since variables like 'transmission' and 'fuelType' are not, converting them to numerical values may introduce misleading information.
+Note: it may be difficult to accurately describe the results due to the encodings and the assumptions made. We will also be primarily examing the "_encoded" and "_log" (normalized) values.
 
-
-
-
-
-
-    - the numerical labels are not 
--
-- like one-hot encoding which will represent each category as a binary (0 or 1) value in separate columns. This way, you won't introduce any false numerical relationships between categories. For the heatmap and correlation analysis, consider using one-hot encoded columns for 'transmission' and 'fuelType' instead of their numerical representations. This will provide a more accurate representation of the correlation between these variables and other numerical columns in your dataset.
-  - One-hot encoding is typically used when dealing with categorical variables that don't have an inherent order or numerical relationship. 
-  - One-hot encoding involves creating binary columns for each category within a categorical variable. Each binary column represents the presence or absence of that category. This is useful when dealing with non-ordinal categorical variables, as it avoids introducing false numerical relationships between categories.
+- From the encoded heatmap we can observe the following results:
+  - 'brand_encoded' appears to have little to none correlation between variables.
+  - 'year' has the following correlation:
+    - Strong positive/negative correlation with the transformed price and mileage, respectively (with each year the price of the vehicle increases and the mileage the vehicle is driven for decreases). This could imply that older vehicles are traded in for newer models each since their price would depreciate significantly if kept for a long period of time.
+  - 'price_log' has the following correlation:
+    - Moderate negative/positive correlation with mileage and engineSize, respectively. This could indicate that the price is dependent on the mileage (value depreciates with distance driven) and the engineSize (value increases based on size which tends to produce more power and torque).
+  - 'transmission_encoded' appears to have little to none correlation between variables.
+  - 'fuelType_encoded' has the following correlation:
+    - Since fuelType does not have any order, this could be interpreted as having a moderate correlation with the engineSize. This is accurate in the sense that more powerful car engines (like those in sports cars) would use petrol compared to normal car engines which would use diesel. Or how electric cars would use a different fuel source compared to combustion engines.
+  - 'tax_log' has the following correlation:
+    - A weak positive correlation with year and price, and a weak negative correlation with mileage.
+    - Moderate negative correlation with mpg which could possibly imply that less fuel-efficient cars will be more costly as they have more of a negative impact on the environment. Conversely, more fuel-efficient cars will be less costly as they are better for the environment compared to the alternatives (e.g. a reward).
+  - 'mpg_log' has the following correlation:
+    - weak to moderate negative correlation with price and engineSize. A more fuel-efficient vehicle may be cheaper to own (for example, possible cheaper buying/selling costs in the long-term and to encourage a more environmental-friendly approach). Additionally, large engineSize may indicate that although they are more powerful (e.g. for towing cars/hauling trailers or racing), they are not as fuel-efficient.
 
 ### <br>Multivariable Regression Analysis
+- Jamie
+- (i just skipped for now, will come back to it if have time but if you want to provide information go ahead as you see fit, i may be able to complete this just need to go through your notebook, however my version may be more brief than you would like)
+..
+
+..
+
+### <br>Tableau
+- Jamie/Kieran
+- (i guess dashboard image if its completed)
+- (discuss business insight, perhaps instead of title "Tableau" we can call it like "Business insights and Tableau Visualizations"?)
+- (do we want to discuss the plots, e.g. why we used some and how it helped us gain further insights/answer questions?)
+..
+
+..
 
 ## <br>Challenges
 - Time.
 - Coordinating different schedules and timezones.
+- Maintaining appropriate file naming conventions and folder structure.
 - 
-- 
+
+- (add any challenges and future considerations as you guys see fit)
+
 ## <br>Future Considerations
+
+
+
+- (add any challenges and future considerations as you guys see fit)
