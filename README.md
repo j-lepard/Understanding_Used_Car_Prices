@@ -9,7 +9,7 @@ This is a group project completed by:
 The purpose of this project is to combine and practice implementing what has been learned thus far by leveraging data to explore a problem and present our findings. 
 
 ### <br>Objective
-The objective is to define a specific problem and thoroughly investigate it using various data analysis techniques, such as data retrieval, exploratory data analysis, and statistical modelling in Python. This analysis will be presented through a visualization dashboard, aiming to showcase key insights and propose potential solutions. Additionally, a user-friendly procedure will be developed, enabling non-technical users to easily interact with and utilize the dashboard.
+The objective is to define a specific problem and thoroughly investigate it using various data analysis techniques, such as data retrieval, exploratory data analysis, and statistical modelling in Python, and visualizing our findings in Tableau. This analysis will be presented through a visualization dashboard, aiming to showcase key insights and propose potential solutions. Additionally, a user-friendly tool will be developed, enabling non-technical users to easily interact with and utilize the dashboard.
 
 ## <br>Process
 ### Project Planning
@@ -42,11 +42,14 @@ The objective is to define a specific problem and thoroughly investigate it usin
   - Correlation analysis (heatmap) to better understand the features.
   - Multivariable regression analysis to quantify the relationship between multiple predictors (features) and price.
 #### Step 5
-- Tableau  
--(feel free to add to any of the steps above as I only have little knowledge of what Jamie was doing at each step, but not certain where Kieran was at with each step)
-...
-
-...
+- Tableau Dashboards and tools
+- Show our EDA Process
+- Describe our outlier process
+- show the different transformations for quantitative attributes
+- show the scatter plots to show the relationship between the Y and X values
+- Show a final Correlation matrix of the model values
+- Deliver a tool that allows a used car seller to assess a car based on the predictor variables of the model
+  
 
 ### <br>Project Development
 - Utilize communication tools (e.g. Google documents, Discord) to discuss and share ideas.
@@ -62,6 +65,8 @@ The dataset contains characteristics related to the vehicle:
 - tax: The tax amount associated with owning or using the vehicle (can depend on emissions, vehicle type, or government regulations).
 - mpg: The miles per gallon; a measure of a vehicle's fuel efficiency, representing the number of miles it can travel using one gallon of fuel.
 - engineSize: The size or capacity of the vehicle's engine (in litres), it provides an indication of the engine's power and performance capabilities.
+
+- User friendly tool to 
 
 ### <br>Data Cleaning and Exploratory Data Analysis
 #### Data Cleaning
