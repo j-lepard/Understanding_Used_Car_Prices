@@ -40,7 +40,7 @@ The objective is to define a specific problem and thoroughly investigate it usin
   - Data distribution (histograms) and normalization using logarithmic transformations.
   - Different outlier identification methods (boxplots) to showcase price's dependency on multiple factors.
   - Correlation analysis (heatmap) to better understand the features.
-  - Multivariable regression analysis to quantify the relationship between multiple predictors (features) and price.
+- Multivariable regression analysis to quantify the relationship between multiple predictors (features) and price.
     - One-hot encoding.
     - Linear regression model(s) and proof of concept for numeric and categorical data.
     - Export data and model(s) to Tableau.
@@ -199,27 +199,42 @@ Note: it may be difficult to accurately describe the results due to the encoding
     - weak to moderate negative correlation with price and engineSize. A more fuel-efficient vehicle may be cheaper to own (for example, possible cheaper buying/selling costs in the long-term and to encourage a more environmental-friendly approach). Additionally, large engineSize may indicate that although they are more powerful (e.g. for towing cars/hauling trailers or racing), they are not as fuel-efficient.
 
 ### <br>Multivariable Regression Analysis
-- Jamie
-- (i just skipped for now, will come back to it if have time but if you want to provide information go ahead as you see fit, i may be able to complete this just need to go through your notebook, however my version may be more brief than you would like)
-
-
 
 - The ordinary least squares (OLS) regression analysis output uses price as the the dependent variable with several independent variables (or predictors) to model the relationship.
-  - 'R-squared' indicates about 76.7% of the variance in the dependent variable (price) is explained by the independent variables in the model.
-  - 'Adj. R-Squared' is the R-squared value adjusted for the number of predictors and penalizes for adding unnecessary predictors. At 76.7%, it suggests that there is no penalty for the inclusion of predictors.
-  - 'F-statistic' tests for overall significiance of the model, in this case it is 1.722e+04 indicating a highly significant model.
-  - 'Prob (F-statistic)' is the associated p-value (0.00) of the F-statistic suggesting that the overall model is statistically significant.
-  - the coefficient 'year' indicates one-unit increase in the year is associated with an estimated increase in price of approximately $1541.61.
-  - the coefficient 'mileage' indicates that for each additional unit of mileage, the price is estimated to decrease by approximately $0.0897.
-  - the coeffcient 'mpg' indicates that each decrease of one unit in miles per gallon is associated with an estimated decrease in price of approximately $50.32.
-  - the coefficient 'engineSize' indicates that each increase in engine size is associated with an estimated increase in price of approximately £9,290.78, holding all other variables constant.
-  - the 'brand_' variable coefficients represent the estimated difference in price compared to a reference brand.
-  - the 'fuelType_' variable coefficients represent the estimated difference in price compared to a reference fuel type.
-  - the 'transmission_' variable coefficients represent the estimated difference in price compared to a reference transmission type.
+- The output of the model and an interpretation is given below:  
+
+**Multiple Regression Output**  
+![Alt text](<images/OLS_Regression_Log_price FINAL v4.png>)
+  
+  **R-squared:**  
+  - indicates about 76.7% of the variance in the dependent variable (price) is explained by the independent variables in the model.  
+  
+  **Adj. R-Squared:**  
+  - the R-squared value adjusted for the number of predictors and penalizes for adding unnecessary predictors. At 76.7%, it suggests that there is no penalty for the inclusion of predictors.  
+  
+   **F-statistic:**
+  -  tests for overall significiance of the model, in this case it is 1.722e+04 indicating a highly significant model.  
+  
+  **Coefficients**:   
+  - 'year' -  indicates one-unit increase in the year is associated with an estimated increase in price of approximately $1541.61.  
+  - 'mileage' indicates that for each additional unit of mileage, the price is estimated to decrease by approximately $0.0897.
+  - 'mpg' indicates that each decrease of one unit in miles per gallon is associated with an estimated decrease in price of approximately $50.32.  
+  - 'engineSize' indicates that each increase in engine size is associated with an estimated increase in price of approximately £9,290.78, holding all other variables constant.
+  - Categorical predictors -'brand_' 'fuelType_' and  'transmission_' variable coefficients represent the estimated difference in price compared to a reference case. 
+  - **Base Cases:**
+    - Brand = Audi
+    - Transmission = Automatic
+    - Fuel Type = Petrol (gas)
+
+**Impact of Categorical Variables on Expected Selling Price**
+![Alt text](images/Categorical_coefficients_output_chart.png)
+
+  Overall Shape of distrirbution: 
+  
   - The 'skew' of 3.657 indicates the data is skewed to the right and that there are outliers that are affecting the mean and making the distribution asymmetric.
   - The 'kurtosis' of 46.883 indicates very heavy tails suggesting that there are extreme outliers or the data points are more concentrated in the tails than a normal distribution.
 
-![img9](https://github.com/j-lepard/LHL-MidtermProject/assets/128000630/28e95f1e-8d9f-4433-bf00-53f2898c4e89)
+
 
   - While all the data appears to be statistically significant predictors of price except 'transmission_Other', based on reality we know that this is not the case, in fact 'mpg' does affect price. The more fuel-efficient the car is, the more it tends to cost. In terms, of the model this just means it needs to be reworked. In additional, more models can be developed with different predictors and an elimination technique (e.g. backward elimination) can be applied to minimize Adj. R-Squared, while maximizing R-Squared. 
 
