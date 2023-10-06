@@ -114,7 +114,7 @@ csv_file_df.insert(1, 'brand', brand_name)
 ##### Histograms
 - Visualize the distribution of each numerical variable in our data.
 
-![img3](https://github.com/j-lepard/LHL-MidtermProject/assets/128000630/e17c5743-9006-4bdc-9c14-f28e805f9b55)
+[histrogram](https://github.com/j-lepard/LHL-MidtermProject/blob/main/images/histogram.PNG)![Alt text](images/histogram.PNG)
 
 - From the histograms we noticed that all the numeric data had a skewed distribution. To stabilize variance and make the data more normally distributed we applied the logarithmic function (to all numeric data types except 'year').
 ```python
@@ -129,9 +129,11 @@ for col in columns_to_transform:
   - Plotted the transformed price evaluated by year.  
   - Plotted the transformed price dependence on the transformed predictor mileage evaluated by year.
 
-![img4](https://github.com/j-lepard/LHL-MidtermProject/assets/128000630/fc298e16-9588-4c98-b68d-853cd50d3b8e)
+[price_log-by-year](https://github.com/j-lepard/LHL-MidtermProject/blob/main/images/price_log-by-year.PNG)  
+![Alt text](images/price_log-by-year.PNG)
 
-![img5](https://github.com/j-lepard/LHL-MidtermProject/assets/128000630/1b0e6015-f4c6-43fc-98e5-911b50097c8a)
+[pricePerMileage_log-by-year](https://github.com/j-lepard/LHL-MidtermProject/blob/main/images/pricePerMileage_log-by-year.PNG) 
+![Alt text](images/pricePerMileage_log-by-year.PNG) 
 
 - Through this process we explored different ways of identifying potential outliers that exist within the data. However, we did not "handle" them since the process did not provide any conclusive evidence. In other words, it was observed that the complexities of 'price' could not be captured by any single variable alone (e.g. price per mileage, although 'mileage' is an important factor, it certainly is not the only determinant of a vehicle's price), but rather is influenced by a multitude of possible predictors including 'year', 'engineSize', 'brand', etc. and eliminating the outliers based on 'price' alone would not make sense. In this case, we turned to correlation and regression to see if it could help us better understand and quantify the relationships between features (predictors) and price.
 
@@ -168,7 +170,8 @@ for col in columns_to_transform:
 >
 > For example, for the categorical variable 'transmission', a possible key-mapping of numeric labels could be represented as follows: 
 >
-> ![img2](https://github.com/j-lepard/LHL-MidtermProject/assets/128000630/9b6863fd-f0c5-4cf8-bc5e-7f4634910752)
+> [key_mapping](https://github.com/j-lepard/LHL-MidtermProject/blob/main/images/key_mapping.PNG)  
+> ![Alt text](images/key_mapping.PNG)
 
 <br>
 
@@ -179,7 +182,8 @@ for col in columns_to_transform:
 - To appropriately represent the nominal categorical variables with no inherent order, our ideal choice would be to use one-hot encoding, but it would not be feasible to represent a total of 29 columns (and rows) on a heatmap in Python due to limited space for visualization.
 - The choice of label encoding was made to maintain a manageable number of columns while still attempting to represent the categorical nature of the data.  
 
-![img6](https://github.com/j-lepard/LHL-MidtermProject/assets/128000630/7601dbe3-70aa-4560-a25c-6b20705cc551)
+[label_encoded_corr](https://github.com/j-lepard/LHL-MidtermProject/blob/main/images/label_encoded_corr.PNG)  
+![Alt text](images/label_encoded_corr.PNG)
 
 Note: it may be difficult to accurately describe the results due to the encodings and the assumptions made. We will also be primarily examing the "_encoded" and "_log" (normalized) values.
 
