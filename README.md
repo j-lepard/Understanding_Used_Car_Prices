@@ -246,10 +246,7 @@ Note: it may be difficult to accurately describe the results due to the encoding
 
 
 ### <br>Tableau
-- Jamie/Kieran
-- (i guess dashboard image if its completed)
-- (discuss business insight, perhaps instead of title "Tableau" we can call it like "Business insights and Tableau Visualizations"?)
-- (do we want to discuss the plots, e.g. why we used some and how it helped us gain further insights/answer questions?)
+- Images forthcoming.
 ..
 
 ..
@@ -273,10 +270,11 @@ Note: it may be difficult to accurately describe the results due to the encoding
 
 Sample output from the result:
 
-![img7](https://github.com/j-lepard/LHL-MidtermProject/assets/128000630/4cbffbe6-4047-4b7b-9651-1d9ac98c1e3c)
+[wiki_api_sample_output](https://github.com/j-lepard/LHL-MidtermProject/blob/main/images/wiki_api_sample_output.PNG)  
+![Alt text](images/wiki_api_sample_output.PNG)
 
 ```python
-# work-in-progress
+# work-in-progresss
 import requests
 from bs4 import BeautifulSoup
 
