@@ -1,0 +1,19 @@
+﻿DUMMY Variable Encoding. ,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,
+String Input,brand_BMW,brand_Ford,brand_Hyundai,brand_Mercedes-Benz,brand_Skoda,brand_Toyota,brand_Vauxhall,brand_Volkswagen,fuelType_Electric,fuelType_Hybrid,fuelType_Other,fuelType_Petrol,transmission_Manual,transmission_Other,transmission_Semi-Auto
+BMW,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Ford,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0
+Hyundai,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+Mercedes-Benz,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
+Skoda,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0
+Toyota,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+Vauxhall,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0
+Volkswagen,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+Electric,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0
+Hybrid,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0
+Other,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+Petrol,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
+Manual,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0
+Other,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0
+Semi-Auto,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
