@@ -212,12 +212,88 @@ Note: it may be difficult to accurately describe the results due to the encoding
 - Time.
 - Coordinating different schedules and timezones.
 - Maintaining appropriate file naming conventions and folder structure.
-- 
-
+- Determining whether or not to further classify the data (in addition to 'country' and 'brand'), how we would classify it and an efficient way of extracting that information to apply it directly to our DataFrames.
+  - We considered classifying the data by vehicle type (e.g. SUV, Coupe, Sedan, etc.), but ultimately could not as both North America and Europe (which is where the brand's in this dataset were manufactured) have different criteria (and even possibly different classifications) on how they may determine the vehicle type. Ideally, we would want a "master list" containing all the different classifications based on an international standard, with this we could then use a method of extracting the information (e.g. API call, web scraping, etc) and either creating a reference lookup table to correspond brands and models with or directly inserting it into our DataFrame based on conditional statements.
+  - We considered classifying the data by weight classes (e.g. light duty, medium duty, heavy duty) but did not have that information listed in the dataset and this classification also most likely varies by country.
+  - We considered classifying the data by engine size but since the data contained both North American and European brands they would also most likely be evaluated differently.
+- Determining the suitable methods of outlier detection and/or removal, as well as interpreting the results. Since price relies heavily upon a multitude of factors, we struggled with deciding which variables could be removed.
+- (regression analsysis - had to apply specific algorithm etc. outside of scope of current knowledge)
 - (add any challenges and future considerations as you guys see fit)
 
 ## <br>Future Considerations
+- Creating a procedure for appropriate naming convention and folder structure
+- Develop our own list of classification to better categorize the data and use it to create more impactful visualizations.
+- Automating the code when considering additional datasets added to the DataFrame. Currently, we have a dictionary defined to assign the country to the corresponding brand. Everytime a new brand is added to the dataset, we would then have to hardcode a country associated with it. For instance, we could use a Wikipedia API with HTML elements to extract data from a page containing a list of information about automobile manufacturers by country and create our own dictionary for all brands which we can be used and implemented into our DataFrame. As seen below, there was code that we were working on and from testing it seemed to work, but we did not have the time to run through the entirety of the Wikipedia page from A to Z.
 
+Sample output from the result:
 
+![img7](https://github.com/j-lepard/LHL-MidtermProject/assets/128000630/4cbffbe6-4047-4b7b-9651-1d9ac98c1e3c)
 
+```python
+# work-in-progress
+import requests
+from bs4 import BeautifulSoup
+
+def fetch_country_car_mapping_from_api():
+    # ikipedia api endpoint for parsing content
+    api_endpoint = "https://en.wikipedia.org/w/api.php"
+
+    # dictionary to store country-car mapping
+    country_car_mapping = {}
+
+    # the webpage is split into sections A to Z which we can iterate through
+    for section_number in range(1, 27):  # 26 sections for each letter of the alphabet
+        # parameters for the api request to extract content for the specific section
+        params = {
+            'action': 'parse',
+            'format': 'json',
+            'page': 'List_of_current_automobile_manufacturers_by_country',
+            'section': section_number
+        }
+
+        try:
+            # send a request to the wikipedia api
+            response = requests.get(api_endpoint, params = params)
+            response_data = response.json()
+
+            # check if the response is valid
+            if 'parse' not in response_data:
+                print(f"Failed to retrieve data for section {chr(64 + section_number)}")
+                continue
+
+            # extract the content from the parsed data
+            content = response_data['parse']['text']['*']
+
+            # use BeautifulSoup to parse the content
+            soup = BeautifulSoup(content, 'html.parser')
+
+            # process the data and extract country names and corresponding car manufacturers
+            current_country = None
+            for element in soup.find_all(['h3', 'ul']):
+                if element.name == 'h3':
+                    current_country = element.text.strip()
+                    country_car_mapping.setdefault(current_country, [])
+                elif element.name == 'ul' and current_country:
+                    car_manufacturers = element.find_all('li')
+                    for manufacturer in car_manufacturers:
+                        country_car_mapping[current_country].append(manufacturer.text.strip())
+
+            # introduce a delay to stay within api rate limits
+            time.sleep(15)
+
+        except requests.exceptions.RequestException as e:
+            print(f"Error for section {chr(64 + section_number)}: {e}")
+
+    return country_car_mapping
+
+# fetch country-car mapping using the wikipedia api
+country_car_mapping_api = fetch_country_car_mapping_from_api()
+
+# print the obtained country-car mapping
+for country, manufacturers in country_car_mapping_api.items():
+    print(f"Country: {country}")
+    print(f"Car Manufacturers: {manufacturers}\n")
+```
+
+- (number of rows and columns affecting performance making dashboard unusable implement something like "with a single, flat file, performance was impacted?)
 - (add any challenges and future considerations as you guys see fit)
